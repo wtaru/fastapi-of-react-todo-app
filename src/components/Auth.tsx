@@ -18,26 +18,26 @@ export const Auth: FC = () => {
 
     if (registerMutation.isLoading || loginMutation.isLoading) {
         return (
-            <div className='flex justify-center items-conter flex-col min-h-screen'>
+            <div className='flex justify-center items-center flex-col min-h-screen'>
                 <h1 className='text-xl text-gray-600 font-mono'>Loading...</h1>
             </div>
         )
     }
     return (
-        <div className='flex justify-center items-conter flex-col min-h-screen text-gray-600 font-mono'>
+        <div className='flex justify-center items-center flex-col min-h-screen text-gray-600 font-mono bg-teal-300'>
             <div className="flex items-center">
-                <BadgeCheckIcon className='h-8 w-8 mr-2 text-blue-500'/>
+                <BadgeCheckIcon className='h-8 w-8 mr-2 text-teal-700'/>
                 <span className='text-center text-3xl font-extrabold'>
-                    FARM Stack web app
+                    Task of Today
                 </span>
             </div>
             <h2 className='my-6'>
-                {isLogin ? "Login" : "create a new account"}
+                {isLogin ? "Login form" : "create a new account form"}
             </h2>
             <form onSubmit={processAuth}>
                 <div>
                     <input 
-                        className='mb-3 px-3 text-sm py-2 border border-gray-300'
+                        className='mb-3 px-3 text-sm py-2 border border-gray-300 '
                         type="email"
                         name='email'
                         autoFocus
@@ -58,7 +58,7 @@ export const Auth: FC = () => {
                 </div>
                 <div className='flex justify-center my-2'>
                     <button
-                        className='disabled:opacity-40 py-2 px-4 rounded text-white bg-indigo-600'
+                        className='disabled:opacity-40 py-2 px-4 rounded text-white bg-teal-700'
                         disabled={!email || !pw}
                         type="submit"
                     >
